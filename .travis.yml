@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "5.0"
+env:
+  global:
+    - GH_REF=github.com/oleg-kipling/autodeploy.git
+    - secure: "hT6fAIDE3Arsf+MXy7T0OwFRGDiC05n2L2DbXe7TxpLTvoKdIWM484Q0ClIRs1a2xhbjDNdw/Lckgv0AnLjVfahQbMYqMobuyqprCs5dUG9o4qsyoOJaXUqo9KvkDYytH4UCB56IClaFGp7FE45iNRoobhvaiBtAK3CV7Jx1ZVsCNJ2RCFO95GAS5pr8y51R3/R/ccXPyOQzppBZR5yTS01YjDavmEGmb4jovBb02b/teFclWuFaEud3iiKEki8MICFU69iwtymItzyuS889aAVbOQAnONaTcYmmxBtSrWd+hf7cf11uScS2vK+4GtMW9fu8+Gwb7w0xkn0FSW+vlHdvZQaQ0ugzInHRSQO1AlWlq+iMl0MX2XjnqpFfnX+WLjmM3jUjjsysoVDTop04YhatUhoHGow8D/AZb9u3dYp30bhT0ZhEOBRHOp+4EUhWNtLvawBs2ACDzXEMjCQlFLc6TOPyeuK2bOz0cbtovm00u4xuqpSRvMPtmhvUN/pZyqeo1RYCBqERu6SA1ATitZ9f8tu1jVsYbV3ja1yt6ds5VB2PZ1tYFYwnwpG7zQotuGQag713Op5gOBuACwJjys5bTbMUjTC78dyAUj3KBtoQIzm8AnGtwA2blDQ2hSdK8ii6IgqXSqqc84wadpDJ2l+uXagP+R+5DSCZQ0zXdLU="
+before_script:
+  - npm install -g gulp
+  - npm install
+script: gulp build
+after_success: bash ./deploy.sh

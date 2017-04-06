@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+# Exclude OS X folder attributes
+.DS_Store
+
 # Runtime data
 pids
 *.pid
@@ -29,6 +32,26 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
+
+# Exclude the build products
+src/bower_components/
+build/*
+*.[oa]
+
+# Exclude any PSD/AI/SKETCH source
+*.psd
+*.ai
+*.sketch
+# Exclude Fonts
+_fonts/
+
+# Exclude the .htaccess file
+.htaccess
+
+# Exclude Text Files
+*.txt
+# Except read me
+!README.txt
 
 # Optional npm cache directory
 .npm
